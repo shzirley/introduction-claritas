@@ -57,11 +57,17 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, #F8FAFB 0%, #E8F4FD 100%);
+    background: linear-gradient(135deg, rgba(248, 250, 251, 0.75) 0%, rgba(232, 244, 253, 0.8) 100%), url('bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     overflow: hidden;
+    padding: 0;
 }
 
 .hero::before {
@@ -84,7 +90,10 @@ body {
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 100px 0 100px;
+    padding: 0;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
     animation: fadeInUp 1s ease-out;
 }
 
@@ -110,7 +119,7 @@ body {
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -120,25 +129,25 @@ body {
     font-weight: 400;
     line-height: 1.15;
     color: var(--text-primary);
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     animation: fadeInUp 1s ease-out 0.3s both;
 }
 
 .hero-subtitle {
     font-size: 20px;
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    margin: 0 auto 20px;
     font-weight: 400;
-    max-width: 800px;
+    max-width: 700px;
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .hero-description {
     font-size: 17px;
     color: var(--text-secondary);
-    max-width: 680px;
+    max-width: 620px;
+    margin: 0 auto 36px;
     line-height: 1.75;
-    margin-bottom: 40px;
     animation: fadeInUp 1s ease-out 0.5s both;
 }
 
@@ -146,6 +155,7 @@ body {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    justify-content: center;
     animation: fadeInUp 1s ease-out 0.6s both;
 }
 
@@ -225,6 +235,136 @@ section {
     font-size: 18px;
     color: var(--text-secondary);
     line-height: 1.8;
+}
+
+/* Video Demo Section */
+.vision-section {
+    background: var(--bg-white);
+    padding: 100px 0;
+}
+
+.vision-container,
+.mission-container {
+    margin-top: 60px;
+}
+
+.vision-title,
+.mission-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.vision-intro,
+.mission-intro {
+    text-align: center;
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.vision-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(26, 35, 50, 0.1);
+    border-color: var(--primary);
+}
+
+.vision-letter {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'Instrument Serif', Georgia, serif;
+    margin: 0 auto 20px;
+}
+
+.vision-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.vision-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.mission-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mission-item {
+    display: flex;
+    gap: 24px;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: all 0.3s ease;
+}
+
+.mission-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 16px rgba(74, 144, 226, 0.1);
+}
+
+.mission-number {
+    min-width: 48px;
+    height: 48px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.mission-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.mission-content p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
 }
 
 /* Video Demo Section */
@@ -716,7 +856,8 @@ section {
     }
 
     .problem-grid,
-    .readiness-grid {
+    .readiness-grid,
+    .vision-grid {
         grid-template-columns: 1fr;
     }
 
